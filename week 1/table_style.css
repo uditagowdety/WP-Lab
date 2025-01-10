@@ -1,0 +1,20 @@
+table,th,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.country{
+    background-color: rgb(243, 245, 163);
+}
+
+.heading{
+    background-color: red;
+}
+
+.year{
+    background-color: lightblue;
+}
+
+.population{
+    background-color: lightgreen;
+}
