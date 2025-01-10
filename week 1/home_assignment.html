@@ -6,36 +6,81 @@
     <title>Conference Registration Form</title>
 </head>
 <body>
-    <!-- <p>hi</p> -->
     <h1>Conference Registration Form</h1>
-    <form>
+    <form action="/submit" method="post" enctype="multipart/form-data">
+        <!-- Full Name, Required-->
         <label for="fullname">Name</label><br>
-        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name"><br>
+        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required><br><br>
 
+        <!-- Email, Required-->
         <label for="email">Enter your e-mail</label><br>
-        <input type="text" id="email" name="email"><br>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
 
+        <!-- Phone, Required, has to be 10 digits -->
         <label for="phone">Enter your phone number</label><br>
-        <input type="number" id="phone" name="phone"><br>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required><br><br>
 
+        <!-- Age, has to be between 18 and 60 -->
         <label for="age">Enter your age</label><br>
-        <input type="number" id="age" name="age"><br>
+        <input type="number" id="age" name="age" min="18" placeholder="Enter your age" required><br><br>
 
-        <!-- dropdown menu for <=2 events -->
+        <!-- Dropdown Menu -->
+        <label for="event-select">Event Preferences (Hold Ctrl (Windows) or Command (Mac) to select multiple options.)</label><br>
+        <select name="event-select" id="event-select" multiple required>
+            <option value="coding-contest">Coding Contest</option>
+            <option value="hackathon">Hackathon</option>
+            <option value="paper-presentation">Paper Presentation</option>
+            <option value="robotics-challenge">Robotics Challenge</option>
+            <option value="keynote-session">Keynote Session</option>
+        </select><br><br>
 
-        <!-- radio buttons for accommodation -->
+        <!-- Radio Buttons, Required -->
+        <label>Accommodation</label><br>
+        <label>
+            <input type="radio" name="accommodation" value="hostel" required>
+            Hostel
+        </label>
+        <label>
+            <input type="radio" name="accommodation" value="hotel">
+            Hotel
+        </label>
+        <label>
+            <input type="radio" name="accommodation" value="none">
+            None
+        </label><br><br>
 
-        <!-- checkboxes for diet prefs -->
+        <!-- Checkboxes -->
+        <label>Diet Preferences</label><br>
+        <label>
+            <input type="checkbox" name="diet[]" value="veg">
+            Veg
+        </label>
+        <label>
+            <input type="checkbox" name="diet[]" value="non-veg">
+            Non-veg
+        </label>
+        <label>
+            <input type="checkbox" name="diet[]" value="no-preference">
+            No preference
+        </label><br><br>
 
-        <!-- file upload -->
+        <!-- File Upload, max size 5MB -->
+        <label for="file-upload">Upload Your Resume (PDF only):</label><br>
+        <input type="file" id="file-upload" name="resume" accept=".pdf" required><br><br>
 
-        <!-- comment textarea -->
+        <!-- Textarea, optional -->
+        <label for="comments">Any Additional Comments:</label><br>
+        <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Enter your comments"></textarea><br><br>
 
-        <!-- checkbox for TnC -->
-        
-        <!-- submit -->
+        <!-- Terms and Conditions, required -->
+        <label>
+            <input type="checkbox" name="tnc" required>
+            I agree to the Terms and Conditions
+        </label><br><br>
 
-        <!-- reset -->
+        <!-- Submit and Reset Buttons -->
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
     </form>
 </body>
 </html>
