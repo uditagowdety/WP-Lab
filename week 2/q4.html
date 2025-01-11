@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap 4 CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom styling for the table */
+        .table-custom {
+            background-color: #879cb1; /* Light background color */
+            border-radius: 5px;
+        }
+
+        /* Make the table smaller */
+        .table-custom th, .table-custom td {
+            font-size: 0.9rem;
+            padding: 2rem;
+            width: 500px;
+        }
+    </style>
     <title>Timetable</title>
 </head>
 <body>
@@ -20,7 +34,7 @@
         <!-- Carousel Inner -->
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <table class="table table-bordered">
+                <table class="table table-sm table-custom table-bordered">
                     <thead>
                         <tr>
                             <th>Morning</th>
@@ -37,7 +51,7 @@
             </div>
 
             <div class="carousel-item">
-                <table class="table table-bordered">
+                <table class="table table-sm table-custom table-bordered">
                     <thead>
                         <tr>
                             <th>Morning</th>
@@ -54,7 +68,7 @@
             </div>
 
             <div class="carousel-item">
-                <table class="table table-bordered">
+                <table class="table table-sm table-custom table-bordered">
                     <thead>
                         <tr>
                             <th>Morning</th>
