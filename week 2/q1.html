@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Bio-Data Form</title>
+</head>
+<body>
+    <h2>Student Bio Data Form</h2>
+    
+    <!-- Start of Form -->
+    <form>
+        <!-- First Name -->
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Jane"><br><br>
+        <!-- </fieldset> -->
+
+        <!-- Last Name -->
+        <!-- <fieldset> -->
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Doe"><br><br>
+        </fieldset>
+
+        <!-- Batch  -->
+        <fieldset>
+            <legend>Graduating Batch</legend>
+            <select name="batch-select" id="batch-select">
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+            </select>
+        </fieldset>
+
+        <!-- Branch  -->
+
+        <!-- Honours? -->
+        <fieldset>
+            <legend>Enrollment Status</legend>
+            <label for="enrolledYes">
+                <input type="radio" id="enrolledYes" name="enrollmentStatus"> Enrolled
+            </label><br>
+            <label for="enrolledNo">
+                <input type="radio" id="enrolledNo" name="enrollmentStatus"> Not enrolled
+            </label><br><br>
+        </fieldset>
+
+        <!-- Submit + Reset Buttons -->
+        <fieldset>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </fieldset>
+    </form>
+    <!-- End of Form -->
+
+</body>
+</html>
