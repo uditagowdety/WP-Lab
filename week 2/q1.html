@@ -1,3 +1,6 @@
+<!-- Design the student bio-data form using button, label, textbox, radio button, table and 
+checkbox using CSS.   -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,9 +23,14 @@
         <!-- Last Name -->
         <!-- <fieldset> -->
             <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" name="lastName" placeholder="Doe"><br><br>
+            <input type="text" id="lastName" name="lastName" placeholder="Doe"><br>
         </fieldset>
 
+        <!-- Date of Birth -->
+        <fieldset>
+            <legend>Date of Birth</legend>
+            <input type="date" name="dob" id="dob">
+        </fieldset>
         <!-- Batch  -->
         <fieldset>
             <legend>Graduating Batch</legend>
@@ -35,16 +43,25 @@
         </fieldset>
 
         <!-- Branch  -->
+        <fieldset>
+            <legend>Branch</legend>
+            <select name="batch-select" id="batch-select">
+                <option value="cse">Computer Science</option>
+                <option value="ece">Electrical</option>
+                <option value="civil">Civil</option>
+                <option value="biotech">Biotech</option>
+            </select>
+        </fieldset>
 
         <!-- Honours? -->
         <fieldset>
-            <legend>Enrollment Status</legend>
+            <legend>Honors Program Enrollment Status</legend>
             <label for="enrolledYes">
                 <input type="radio" id="enrolledYes" name="enrollmentStatus"> Enrolled
             </label><br>
             <label for="enrolledNo">
                 <input type="radio" id="enrolledNo" name="enrollmentStatus"> Not enrolled
-            </label><br><br>
+            </label><br>
         </fieldset>
 
         <!-- Submit + Reset Buttons -->

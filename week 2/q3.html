@@ -1,11 +1,56 @@
+<!--  Design an attractive ‘magazine cover page’ using different bootstrap elements. 
+ -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bootstrap Site</title>
+    <link rel="stylesheet" href="q3_style.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    
+    <!-- header section -->
+    <header class="text-light text-center py-4 display-4">RARE GARDEN</header>
+
+    <!-- main section -->
+    <!-- <main class="text-light">hiiii</main> -->
+
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Main Article Section -->
+            <div class="col-md-8">
+                <h2 class="text-light display-4">In-Depth Look: Emerging Tech Trends</h2>
+                <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet erat euismod, scelerisque elit non, placerat lorem. Sed quis nisi ligula. Vestibulum non felis justo. Phasellus vitae sapien lectus.</p>
+                <a href="#" class="btn btn-primary">Read More</a>
+            </div>
+            
+            <!-- Side Section with Additional Articles -->
+            <div class="col-md-4">
+                <div class="text-light side-content mb-4">
+                    <h3>Editor's Pick</h3>
+                    <p>Explore the latest advancements in AI and its impact on industries.</p>
+                    <a href="#" class="btn btn-light">Learn More</a>
+                </div>
+                <div class="text-light side-content">
+                    <h3>Trending News</h3>
+                    <p class="text-light">Discover the hottest startups making waves in Silicon Valley.</p>
+                    <a href="#" class="btn btn-light">Explore</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer section -->
+    <footer class="footer text-center mt-4">
+        <p class="text-light">&copy; 2025 Rare Garden. All rights reserved.</p>
+        <div>
+            <a href="#" class="text-white mx-2">Facebook</a>
+            <a href="#" class="text-white mx-2">Twitter</a>
+            <a href="#" class="text-white mx-2">Instagram</a>
+        </div>
+    </footer>
 </body>
 </html>
