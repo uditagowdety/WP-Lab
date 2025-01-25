@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Online Quiz</title>
+</head>
+<body>
+    <!-- <header>Online Quiz</header> -->
+
+    <h2 class="page__title">Online Quiz</h2>
+    <div class="quiz__container">
+        <div class="question__container">
+            What's the name of our galaxy?
+        </div>
+
+        <div class="answer__container">
+            <label><input type="radio" name="answer" value="milky way"> Milky Way</label>
+            <label><input type="radio" name="answer" value="white road"> White Road</label>
+            <label><input type="radio" name="answer" value="spiral being"> Spiral Being</label>
+        </div>
+
+        <button id="submitAnswer" onclick="checkAnswer()">Submit Answer</button>
+        <p id="feedback"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
