@@ -5,7 +5,6 @@ function checkAnswer() {
     if (selectedAnswer) {
         const answer = selectedAnswer.value;
         
-        // Check if the selected answer is correct
         if (answer === "milky way") {
             feedbackElement.textContent = "Correct! The name of our galaxy is the Milky Way.";
             feedbackElement.style.color = "green";
