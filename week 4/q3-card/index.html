@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <title>jQuery Birthday Card</title>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card-options">
+            <!-- background color dropdown -->
+            <label for="bg-select">choose a background color</label>
+            <select id="bg-select">
+                <option value="0">select a background color</option>
+                <option value="1">red</option>
+                <option value="2">pink</option>
+                <option value="3">purple</option>
+            </select>
+
+            <!-- font dropdown -->
+            <label for="font-select">choose a font</label>
+            <select id="font-select">
+                <option value="0">select a font</option>
+                <option value="1">georgia</option>
+                <option value="2">verdana</option>
+                <option value="3">times new roman</option>
+            </select>
+
+            <!-- font size number (text?) input -->
+            <!-- <label for="size-select"></label> -->
+            <input type="number" id="size-select" placeholder="enter font size" required>
+
+            <!-- border type radio button -->
+            <label for="name">choose border type</label>
+            <input type="radio" id="none" name="border" value="none">
+            <label for="none">none</label>
+            <input type="radio" id="double" name="border" value="double">
+            <label for="double">double</label>
+            <input type="radio" id="solid" name="border" value="solid">
+            <label for="solid">solid</label>
+
+            <!-- default image checkbox -->
+            <input type="checkbox" id="default-select" required>
+            <label for="default-select">do you want the default image?</label>
+
+            <!-- message text input -->
+            <input type="text" id="message-input" placeholder="add your birthday message" required>
+
+            <!-- generate button -->
+            <button class="generate-button">generate your birthday card!</button>
+        </div>
+        
+        <div class="card-generated">
+            <!-- <img src="https://picsum.photos/400/600" alt=""> -->
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript" language="javascript">
+    $(document).ready(function(){
+        console.log("ready!");
+
+        $(".generate-button").click(function(){
+            let bgColor=$("#bg-select").val();
+            let font=$("#font-select").val();
+            let fontSize=$("#size-select").val();
+            let borderType = $('input[name="border"]:checked').val();
+            let useDefaultImage = $('#default-select').prop('checked');
+            let message = $('#message-input').val();
+
+
+            if(bgColor=="1"){
+                $(".card-generated").css("background-color","red");
+            } else if(bgColor=="2"){
+                $(".card-generated").css("background-color","pink");
+            } else if(bgColor=="3"){
+                $(".card-generated").css("background-color","purple");
+            }
+
+            if (font == '1') {
+                $('.card-generated').css('font-family', 'Georgia');
+            } else if (font == '2') {
+                $('.card-generated').css('font-family', 'Verdana');
+            } else if (font == '3') {
+                $('.card-generated').css('font-family', 'Times New Roman');
+            }
+
+            $('.card-generated').css('font-size', fontSize + 'px');
+
+            if (borderType == 'none') {
+                $('.card-generated').css('border', 'none');
+            } else if (borderType == 'double') {
+                $('.card-generated').css('border', 'double 5px black');
+            } else if (borderType == 'solid') {
+                $('.card-generated').css('border', 'solid 5px black');
+            }
+
+            if (useDefaultImage) {
+                if ($('.card-generated img').length === 0) {  
+                    $('.card-generated').append('<img src="https://picsum.photos/400/600" alt="Birthday Image">');
+                }
+            } else {
+                $('.card-generated img').remove();  
+}
+
+            $('.card-generated').append('<p>' + message + '</p>');
+        });
+    });
+</script>
+</html>

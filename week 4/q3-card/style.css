@@ -1,0 +1,15 @@
+.card-container{
+    display: flex;
+    background-color: bisque;
+}
+
+.card-options,
+.card-generated{
+    flex: 1;
+    padding: 1rem;
+}
+
+.card-options{
+    display: flex;
+    flex-direction: column;
+}
