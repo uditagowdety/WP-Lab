@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <title>jQuery Table</title>
+</head>
+<body>
+    <div class="page-container">
+        <table class="page-table">
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+    
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+    
+            <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+        </table>
+
+        <img class="page-image" src="https://picsum.photos/200" alt="image">
+    </div>
+    <button class="page-button">toggle alignment</button>
+</body>
+
+<script type="text/javascript" language="javascript">
+    $(document).ready(function(){
+        console.log("ready!");
+        $(".page-button").click(function(){
+            if($(".page-container").css("justify-content")==="start"){
+                $(".page-container").css("justify-content","end");
+            } else{
+                $(".page-container").css("justify-content","start");
+            }
+        });
+    });
+</script>
+</html>

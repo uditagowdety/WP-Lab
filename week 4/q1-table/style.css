@@ -1,0 +1,10 @@
+.page-container{
+    display: flex;
+    justify-content: start;
+}
+
+table,tr,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 2rem;
+}
