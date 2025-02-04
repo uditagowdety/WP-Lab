@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz practice</title>
+<style>
+    body{
+        background-color: lightblue;
+    }
+    h1{
+        color:white;
+        text-align: center;
+    }
+    .quiz-box{
+        background-color: white;
+        width: 50%;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    p{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 20px;
+    }
+    h2{
+        text-align: center;
+    }
+</style>
+<script>
+    function check(form){
+        var score=0;
+        if(form.q1.value=="bangtan sonyeondan"){
+            score+=1;
+        }
+        if(form.q2.value=="tomorrow by together"){
+            score+=1;
+        }
+        document.getElementById("result").innerHTML=score;
+    }
+</script>
+</head>
+
+<body>
+    <h1>online quiz</h1>
+    <div class="quiz-box">
+        <form name="quiz">
+            <p>what's the full form of bts?</p>
+            <input type="radio" name="q1" value="bangtan sonyeondan"> bangtan sonyeondan <br>
+            <input type="radio" name="q1" value="by the sea"> by the sea <br>
+            <input type="radio" name="q1" value="behind the scenes"> behind the scenes <br>
+
+            <p>what's the full form of txt?</p>
+            <input type="radio" name="q2" value="tomorrow by together"> tomorrow by together <br>
+            <input type="radio" name="q2" value="time x time"> time x time <br>
+            <input type="radio" name="q2" value="today xtreme tables"> today extreme tables <br>
+
+            <br>
+
+            <input type="button" onclick="check(this.form)" value="submit">
+            <input type="reset" value="reset">
+
+        </form>
+        <h2>score: <span id="result"></span></h2>
+    </div>
+</body>
+</html>

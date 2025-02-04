@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: lightblue;
+        }
+        h1{
+            color:white;
+            text-align: center;
+        }
+        p{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+        }
+    </style>
+    <script language="javascript">
+        function check(form){
+            if(form.userid.value=="myuserid"&&form.pswrd.value=="mypswrd"){
+                window.open("https://archiveofourown.org/works/276748/chapters/437976","_blank");
+            } else {
+                alert("error password or username")
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>validate credentials</h1>
+    <form name="login">
+        username <input type="text" name="userid">
+        password <input type="text" name="pswrd">
+        <input type="button" onclick="check(this.form)" value="login">
+        <input type="reset" value="cancel">
+    </form>
+</body>
+</html>

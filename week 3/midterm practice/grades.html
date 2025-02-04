@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+    <style>
+        body{
+            background-color: rgb(162, 93, 93);
+        }
+
+        h1{
+            color: rgb(31, 23, 23);
+            text-align: center;
+        }
+
+        .grades-container{
+            background-color: aquamarine;
+            border: solid black 1px;
+            width: 40%;
+            margin: 0 auto;
+        }
+
+        input[type=number],
+        input[type=button],
+        input[type=reset],
+        h2{
+            margin: 0.5rem;
+        }
+
+    
+    </style>
+</head>
+<body>
+    <h1>grades calculator</h1>
+    <div class="grades-container">
+        <form name="grades">
+            <input type="number" name="exam1" placeholder="enter exam 1 marks" required> <br>
+            <input type="number" name="exam2" placeholder="enter exam 2 marks" required> <br>
+            <input type="number" name="exam3" placeholder="enter exam 3 marks" required> <br>
+
+            <input type="button" onclick="check(this.form)" value="submit">
+            <input type="reset" value="reset">
+
+            <h2>final grade: <span id="result"></span></h2>
+        </form>
+    </div>
+    <script>
+        function check(form){
+            var score=0;
+            var grade="D";
+
+            score=parseFloat(form.exam1.value)+parseFloat(form.exam2.value)+parseFloat(form.exam3.value);
+
+            let avg=score/3;
+            if(avg>90){
+                grade="A";
+            } else if(avg>80){
+                grade="B";
+            } else if(avg>70){
+                grade="C";
+            } else {
+                grade="D";
+            }
+
+            document.getElementById("result").innerHTML=grade;
+        }
+    </script>
+</body>
+</html>
