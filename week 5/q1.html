@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            margin: 5px 0;
+            padding: 8px;
+        }
+        button {
+            background-color: green;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: darkgreen;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background: #f4f4f4;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Student Details Form</h2>
+        <form id="studentForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" required>
+
+            <label for="contact">Contact Number:</label>
+            <input type="text" id="contact" required>
+
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" required>
+
+            <label for="english">English Marks:</label>
+            <input type="number" id="english" min="0" max="100" required>
+
+            <label for="physics">Physics Marks:</label>
+            <input type="number" id="physics" min="0" max="100" required>
+
+            <label for="chemistry">Chemistry Marks:</label>
+            <input type="number" id="chemistry" min="0" max="100" required>
+
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+
+        <h3>Student Details:</h3>
+        <textarea id="output" rows="6" readonly></textarea>
+
+        <h3>Total Percentage:</h3>
+        <label id="percentage">0%</label>
+    </div>
+
+    <script>
+        function submitForm() {
+            let name = document.getElementById("name").value;
+            let dob = document.getElementById("dob").value;
+            let address = document.getElementById("address").value;
+            let contact = document.getElementById("contact").value;
+            let email = document.getElementById("email").value;
+            let english = parseFloat(document.getElementById("english").value);
+            let physics = parseFloat(document.getElementById("physics").value);
+            let chemistry = parseFloat(document.getElementById("chemistry").value);
+
+            if (!name || !dob || !address || !contact || !email || isNaN(english) || isNaN(physics) || isNaN(chemistry)) {
+                alert("Please fill in all fields correctly.");
+                return;
+            }
+
+            let totalMarks = english + physics + chemistry;
+            let percentage = (totalMarks / 300) * 100;
+
+            let studentDetails = `Name: ${name}\nDate of Birth: ${dob}\nAddress: ${address}\nContact: ${contact}\nEmail: ${email}\nEnglish: ${english}, Physics: ${physics}, Chemistry: ${chemistry}`;
+            
+            document.getElementById("output").value = studentDetails;
+            document.getElementById("percentage").innerText = percentage.toFixed(2) + "%";
+        }
+    </script>
+
+</body>
+</html>

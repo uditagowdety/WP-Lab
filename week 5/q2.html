@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Promotion Eligibility</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select, button {
+            width: 100%;
+            margin: 5px 0;
+            padding: 8px;
+        }
+        button {
+            background-color: green;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkgreen;
+        }
+        #result {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Employee Promotion Check</h2>
+
+        <label for="empID">Select Employee ID:</label>
+        <select id="empID">
+            <option value="101">101</option>
+            <option value="102">102</option>
+            <option value="103">103</option>
+            <option value="104">104</option>
+        </select>
+
+        <label for="doj">Date of Joining:</label>
+        <input type="date" id="doj" required>
+
+        <button onclick="checkEligibility()">Am I Eligible for Promotion?</button>
+
+        <h3>Eligibility Result: <span id="result">-</span></h3>
+    </div>
+
+    <script>
+        function checkEligibility() {
+            let doj = document.getElementById("doj").value;
+            if (!doj) {
+                alert("Please select a date of joining.");
+                return;
+            }
+
+            let joiningYear = new Date(doj).getFullYear();
+            let currentYear = new Date().getFullYear();
+            let experience = currentYear - joiningYear;
+
+            if (experience >= 5) {
+                document.getElementById("result").innerText = "YES";
+                document.getElementById("result").style.color = "green";
+            } else {
+                document.getElementById("result").innerText = "NO";
+                document.getElementById("result").style.color = "red";
+            }
+        }
+    </script>
+
+</body>
+</html>
