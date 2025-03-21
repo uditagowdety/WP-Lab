@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bouncing ball</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: black;
+        }
+        .ball {
+            width: 50px;
+            height: 50px;
+            background: red;
+            border-radius: 50%;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="ball"></div>
+    <script>
+        let ball = document.querySelector('.ball')
+        let x = 100, y = 100, dx = 3, dy = 3
+        function animate() {
+            let width = window.innerWidth, height = window.innerHeight
+            if (x + dx > width - 50 || x + dx < 0) dx = -dx
+            if (y + dy > height - 50 || y + dy < 0) dy = -dy
+            x += dx
+            y += dy
+            ball.style.transform = `translate(${x}px, ${y}px)`
+            requestAnimationFrame(animate)
+        }
+        animate()
+    </script>
+</body>
+</html>
