@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+</head>
+<body>
+    <h2>voting results:</h2>
+
+    <ul>
+        {% for option, percent in percentages.items%}
+            <li>{{ option }}: {{ percent|floatformat:2 }}%</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'voting' %}">Vote Again</a>
+</body>
+</html>
